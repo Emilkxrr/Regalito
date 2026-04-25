@@ -2,39 +2,56 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 <title>Para Ti 💖</title>
 
 <style>
+/* Reset básico para asegurar que no haya bordes blancos */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    /* 100dvh asegura que tome el 100% del alto dinámico de la pantalla del celular (ignorando barras de navegación) */
+    min-height: 100dvh; 
     background: linear-gradient(135deg, #ffdde1, #ee9ca7);
     font-family: Arial, sans-serif;
     color: white;
     display: flex;
     justify-content: center;
+    align-items: center; /* Centra el contenedor verticalmente */
 }
 
 .container {
     width: 90%;
     max-width: 500px;
-    margin-top: 40px;
+    padding: 20px 0; /* Da un poco de respiro arriba y abajo por si la pantalla es pequeña */
     z-index: 2;
 }
 
 .card {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
+    /* Efecto de cristal (Glassmorphism) para que se vea más moderno y se integre al fondo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 25px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 h1 {
     font-size: 24px;
     margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 p {
@@ -45,16 +62,19 @@ p {
 
 .decor {
     text-align: center;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
-/* Corazones */
+/* Corazones animados */
 .heart {
     position: fixed;
     top: -10px;
     color: #ff4d6d;
+    z-index: 1; /* Detrás de la tarjeta */
     animation: fall linear infinite;
+    pointer-events: none; /* Evita que los corazones interfieran si tocas la pantalla */
 }
 
 @keyframes fall {
@@ -63,10 +83,11 @@ p {
     }
 }
 
-/* Ajuste extra para pantallas muy pequeñas */
+/* Ajustes para pantallas muy pequeñas */
 @media (max-width: 400px) {
-    h1 { font-size: 20px; }
-    p { font-size: 14px; }
+    h1 { font-size: 22px; }
+    p { font-size: 15px; }
+    .card { padding: 15px; }
 }
 </style>
 </head>
@@ -74,38 +95,36 @@ p {
 <body>
 
 <div class="container">
+    <div class="decor">🌸💖🌷💘🌹</div>
 
-<div class="decor">🌸💖🌷💘🌹</div>
+    <div class="card">
+        <h1>Feliz Día del Niño 💖</h1>
 
-<div class="card">
-    <h1>Feliz Día del Niño 💖</h1>
+        <p>
+        Hoy que es el Día del Niño, no solo pensé en lo bonito de esa etapa, sino también en ti… 
+        porque tienes algo que muchas personas pierden con el tiempo: esa forma tan linda de hacer todo más ligero, 
+        de sacar sonrisas y de ver las cosas con una chispa especial. 💕
+        </p>
 
-    <p>
-    Hoy que es el Día del Niño, no solo pensé en lo bonito de esa etapa, sino también en ti… 
-    porque tienes algo que muchas personas pierden con el tiempo: esa forma tan linda de hacer todo más ligero, 
-    de sacar sonrisas y de ver las cosas con una chispa especial. 💕
-    </p>
+        <p>
+        Me encanta cómo eres, cómo a veces puedes ser tierna, divertida y hasta un poco traviesa, 
+        y aun así lograr que me encariñe más cada día. 💘 Siento que contigo puedo ser yo, sin filtros, 
+        como cuando uno era niño y todo era más real. 🌸
+        </p>
 
-    <p>
-    Me encanta cómo eres, cómo a veces puedes ser tierna, divertida y hasta un poco traviesa, 
-    y aun así lograr que me encariñe más cada día. 💘 Siento que contigo puedo ser yo, sin filtros, 
-    como cuando uno era niño y todo era más real. 🌸
-    </p>
+        <p>
+        Aunque estemos lejos, has logrado algo que no cualquiera: hacerme sentir cerca, acompañado, 
+        y feliz con solo un mensaje. 💓 Y eso vale muchísimo para mí. 🌷
+        </p>
 
-    <p>
-    Aunque estemos lejos, has logrado algo que no cualquiera: hacerme sentir cerca, acompañado, 
-    y feliz con solo un mensaje. 💓 Y eso vale muchísimo para mí. 🌷
-    </p>
+        <p>
+        Así que hoy, en este Día del Niño, quiero recordarte que nunca pierdas esa esencia tan bonita que tienes… 
+        porque es justo eso lo que te hace tan especial para mí. 🌹  
+        Y sinceramente, me encanta poder compartir todo esto contigo. 💖
+        </p>
+    </div>
 
-    <p>
-    Así que hoy, en este Día del Niño, quiero recordarte que nunca pierdas esa esencia tan bonita que tienes… 
-    porque es justo eso lo que te hace tan especial para mí. 🌹  
-    Y sinceramente, me encanta poder compartir todo esto contigo. 💖
-    </p>
-</div>
-
-<div class="decor">💖🌸🌷💕🌹</div>
-
+    <div class="decor">💖🌸🌷💕🌹</div>
 </div>
 
 <script>
@@ -125,7 +144,8 @@ function crearCorazon() {
     }, 6000);
 }
 
-setInterval(crearCorazon, 300);
+// Ligeramente más espaciado para no saturar el procesador del celular
+setInterval(crearCorazon, 400); 
 </script>
 
 </body>
