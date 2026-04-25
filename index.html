@@ -2,49 +2,58 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Ti 💖</title>
 
 <style>
 body {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    overflow-x: hidden;
     background: linear-gradient(135deg, #ffdde1, #ee9ca7);
     font-family: Arial, sans-serif;
-    text-align: center;
     color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 40px;
+    z-index: 2;
 }
 
 .card {
-    position: relative;
-    z-index: 2;
     background: rgba(255,255,255,0.15);
     border-radius: 20px;
-    padding: 25px;
-    max-width: 600px;
-    margin: 80px auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .decor {
-    font-size: 24px;
-    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 /* Corazones */
 .heart {
-    position: absolute;
+    position: fixed;
     top: -10px;
     color: #ff4d6d;
-    font-size: 20px;
     animation: fall linear infinite;
 }
 
@@ -53,12 +62,20 @@ p {
         transform: translateY(110vh);
     }
 }
+
+/* Ajuste extra para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    h1 { font-size: 20px; }
+    p { font-size: 14px; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="decor">🌸💖🌷💘🌹💕🌼💓🌺</div>
+<div class="container">
+
+<div class="decor">🌸💖🌷💘🌹</div>
 
 <div class="card">
     <h1>Feliz Día del Niño 💖</h1>
@@ -87,28 +104,29 @@ p {
     </p>
 </div>
 
-<div class="decor">💖🌸🌷💕🌹💘🌼💓🌺</div>
+<div class="decor">💖🌸🌷💕🌹</div>
+
+</div>
 
 <script>
-// Crear corazones cayendo
 function crearCorazon() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML = "💖";
 
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    heart.style.fontSize = (Math.random() * 15 + 10) + "px";
+    heart.style.animationDuration = (Math.random() * 4 + 3) + "s";
 
     document.body.appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
-    }, 5000);
+    }, 6000);
 }
 
-setInterval(crearCorazon, 200);
+setInterval(crearCorazon, 300);
 </script>
 
 </body>
-      </html>
+</html>
