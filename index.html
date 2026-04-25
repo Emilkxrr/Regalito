@@ -19,53 +19,52 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    /* 100dvh asegura que tome el 100% del alto dinámico de la pantalla del celular (ignorando barras de navegación) */
     min-height: 100dvh; 
     background: linear-gradient(135deg, #ffdde1, #ee9ca7);
     font-family: Arial, sans-serif;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el contenedor verticalmente */
 }
 
 .container {
-    width: 100vw; /* 100% del ancho de la pantalla */
-    min-height: 100dvh; /* 100% del alto dinámico */
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px 0; /* Da un poco de respiro arriba y abajo por si la pantalla es pequeña */
     z-index: 2;
-    position: relative;
-}
-
-.decor {
-    text-align: center;
-    font-size: 26px;
-    padding: 15px 0;
-    margin: 0;
 }
 
 .card {
-    flex: 1; /* Ocupa todo el espacio vertical sobrante entre las decoraciones */
     background: rgba(255, 255, 255, 0.15);
+    /* Efecto de cristal (Glassmorphism) para que se vea más moderno y se integre al fondo */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: none; /* Sin borde para que se integre totalmente a la pantalla */
-    border-radius: 0; /* Sin esquinas redondeadas */
-    padding: 20px 25px; /* Margen interno para que el texto no toque los bordes del celular */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; /* Distribuye el texto de arriba a abajo uniformemente */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 h1 {
-    font-size: 28px; /* Ligeramente más grande */
-    margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 p {
-    font-size: 18px; /* Letra un poco más grande para cubrir mejor la pantalla */
+    font-size: 16px;
     line-height: 1.6;
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.decor {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 /* Corazones animados */
@@ -86,9 +85,9 @@ p {
 
 /* Ajustes para pantallas muy pequeñas */
 @media (max-width: 400px) {
-    h1 { font-size: 24px; }
-    p { font-size: 16px; }
-    .decor { font-size: 22px; }
+    h1 { font-size: 22px; }
+    p { font-size: 15px; }
+    .card { padding: 15px; }
 }
 </style>
 </head>
@@ -150,5 +149,4 @@ setInterval(crearCorazon, 400);
 </script>
 
 </body>
-    </html>
-    
+</html>
